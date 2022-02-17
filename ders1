@@ -1,0 +1,49 @@
+using System;
+
+namespace NDPders1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // kullanıcı tarafından girilen başlangıç,bitiş ve artış değerine göre sayıları döndüren programı yazınız. 
+            // çıktı olarak dönen sayılardan tek olanları toplayan ve çift olanları çarpan programı yazınız.
+
+            Console.Write("Başlangıç değeri giriniz: ");
+
+            int baslangic = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Bitiş değeri giriniz: ");
+
+            int bitis = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Artış değeri giriniz: ");
+
+            int artis = Convert.ToInt32(Console.ReadLine());
+
+
+            int topla = 0;
+            int carp = 1;
+
+            for (int i = baslangic; i <= bitis ; i+= artis)
+            {
+                Console.WriteLine(i);
+
+                if (i % 2 == 0)
+                {
+                    carp *= i;
+                }
+                else if (i % 2 != 0)
+                {
+                    topla += i;
+                }
+            }
+
+            Console.WriteLine("Çift sayıların çarpımı: " + carp);
+            Console.WriteLine("Tek sayıların toplamı: " + topla);
+
+
+
+        }
+    }
+}
