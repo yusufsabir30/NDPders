@@ -1,0 +1,57 @@
+using System;
+
+namespace NDPders2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Kullanıcının kaç saat kaldığını söylediği,1 saat kalma bedeline 10 lira, 2 saat kalma bedeline 20 lira, 3 saat kalma bedeline 30 lira
+            // ondan sonraki her saat başına 5 lira alan otopark programı yazınız.
+
+            int ucret;
+            int i = 0;
+
+
+            while (i == 0)
+            {
+                Console.WriteLine("Otoparkta kaç saat kaldınız: ");
+                int kalmaSuresi = Convert.ToInt32(Console.ReadLine());
+
+                if (kalmaSuresi == 1)
+                {
+                    ucret = 10;
+                    Console.Write("Ücretiniz: {0}\n", ucret);
+                    i++;
+                }
+                else if (kalmaSuresi == 2)
+                {
+                    ucret = 20;
+                    Console.Write("Ücretiniz: {0}\n", ucret);
+                    i++;
+                }
+                else if (kalmaSuresi == 3)
+                {
+                    ucret = 30;
+                    Console.Write("Ücretiniz: {0}\n", ucret);
+                    i++;
+                }
+                else if (kalmaSuresi > 3)
+                {
+                    ucret = 30 + (kalmaSuresi - 3) * 5;
+                    Console.Write("Ücretiniz: {0}\n", ucret);
+                    i++;
+                }
+                
+                else
+                {
+                    Console.Write("Hatalı giriş yaptınız, lütfen 0'dan büyük bir sayı giriniz! \n");
+                }
+
+                
+            }
+
+
+        }
+    }
+}
