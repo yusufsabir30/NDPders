@@ -1,0 +1,31 @@
+using System;
+
+namespace NDPders2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Kullanıcının girdiği 3 basamaklı sayıyı yazı haline çeviren programı yazınız.
+            // Örnek: 865 girildiğinde = sekiz yüz altmış beş yazan program
+
+            int yuzler, onlar, birler;
+
+            Console.Write("Lütfen 3 basamaklı bir sayı giriniz: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+
+
+            yuzler = a / 100;
+            onlar = a % 100 / 10;
+            birler = a % 10;
+
+            string[] diziYuzler = {"","Yüz","İki Yüz","Üç Yüz","Dört Yüz","Beş Yüz","Altı Yüz","Yedi Yüz","Sekiz Yüz","Dokuz Yüz" };
+            string[] diziOnlar = { "","On", "Yirmi", "Otuz", "Kırk", "Elli", "Altmış", "Yetmiş", "Seksen", "Doksan" };
+            string[] diziBirler = {"","Bir", "İki", "Üç", "Dört", "Beş", "Altı", "Yedi", "Sekiz", "Dokuz" };
+          
+            
+                Console.WriteLine(diziYuzler[yuzler] + " " + diziOnlar[onlar]+ " " + diziBirler[birler]);
+            
+        }
+    }
+}
