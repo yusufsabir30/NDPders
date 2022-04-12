@@ -1,0 +1,78 @@
+namespace NDPOdev
+{
+    public partial class Form1 : Form
+    {
+       
+        TextBox txtSayi = new TextBox();
+        Label label1 = new Label();
+        Label label2 = new Label();
+        Label label3 = new Label();
+        Button btnHesapla = new Button();
+        public Form1()
+        {
+            
+            InitializeComponent();
+            
+        }
+       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+            txtSayi.Left = 350;
+            txtSayi.Top = 80;
+            this.Controls.Add(txtSayi);
+
+            
+            label1.Text = "X";
+            label1.Left = 250;
+            label1.Top = 80;
+            this.Controls.Add((Label)label1);
+
+            
+            label2.Text = "Y";
+            label2.Left = 250;
+            label2.Top = 120;
+            this.Controls.Add(((Label)label2));
+
+
+            label3.Width = 5000;
+            label3.Left = 350;
+            label3.Top = 120;
+            this.Controls.Add(((Label)label3));
+
+            
+            btnHesapla.Text = "HESAPLA";
+            btnHesapla.Left = 350;
+            btnHesapla.Top = 250;
+            this.Controls.Add((Button)btnHesapla);
+            btnHesapla.Click+=new EventHandler(btnHesapla_Click);
+        }
+        
+        private void btnHesapla_Click(object sender, EventArgs e)
+        {
+
+            int sayi = int.Parse(txtSayi.Text);
+            int onbinler, binler, yuzler, onlar, birler;
+
+            onbinler = (int)sayi / 10000;         //sayi/10000
+            binler = (int)sayi % 10000 / 1000;   //sayi%10000/1000 55350
+            yuzler = (int)sayi % 1000 / 100; // sayi%1000/100
+            onlar = (int)sayi % 100 / 10; // sayi%100/10
+            birler = (int)sayi % 10;
+
+            
+
+            string[] diziOnbinler = { "", "On", "Yirmi", "Otuz", "Kırk", "Elli", "Altmış", "Yetmiş", "Seksen", "Doksan" };
+            string[] diziBinler = { "", "Bin", "İki Bin", "Üç Bin", "Dört Bin", "Beş Bin", "Altı Bin", "Yedi Bin", "Sekiz Bin", "Dokuz Bin" };
+            string[] diziYuzler = { "", "Yüz", "İki Yüz", "Üç Yüz", "Dört Yüz", "Beş Yüz", "Altı Yüz", "Yedi Yüz", "Sekiz Yüz", "Dokuz Yüz" };
+            string[] diziOnlar = { "", "On", "Yirmi", "Otuz", "Kırk", "Elli", "Altmış", "Yetmiş", "Seksen", "Doksan" };
+            string[] diziBirler = { "", "Bir", "İki", "Üç", "Dört", "Beş", "Altı", "Yedi", "Sekiz", "Dokuz" };
+
+
+            label3.Text = (diziOnbinler[onbinler] + " " + diziBinler[binler] + " " + diziYuzler[yuzler] + " " + diziOnlar[onlar] + " " + diziBirler[birler]);
+        }
+        
+        
+
+    }
+}
